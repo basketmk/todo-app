@@ -1,7 +1,6 @@
 # Todo アプリ (Vite + React + Tailwind CSS)
 
-このリポジトリは、**Vite + React + Tailwind CSS** を使って作成する  
-学習用のToDoアプリです。  
+このリポジトリでは、**Vite + React + Tailwind CSS** を使用し、Todoアプリの作成をしていきます。
 ドットインストールの教材に基づいて実装を進めていきます。
 
 ## 使用技術
