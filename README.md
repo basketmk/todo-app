@@ -1,4 +1,7 @@
-# React + TypeScript + Vite
+# Todo App (Vite + React + Tailwind CSS)
+
+This is a simple Todo application built with **Vite**, **React**, and **Tailwind CSS**.  
+The project is created for learning purposes, following Dotinstall tutorials.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
