@@ -18,9 +18,7 @@ function App() {
         <li className="flex justify-between w-full items-start gap-3 ">
           <label className="flex gap-3 flex-1 min-w-0 flex-1">
             <input type="checkbox" />
-            <div className="break-all">
-              aaassssssssssssssssssswwwwwwwswwwwwwwwwwwwwwwwwwwwwwwwwwwwwwss
-            </div>
+            <span className="break-all">aaa</span>
           </label>
           <button className="border bg-gray-200 cursor-pointer flex-none w-6 h-6 flex items-center justify-center">
             ×
@@ -31,7 +29,7 @@ function App() {
         <li className="flex items-center justify-between w-full">
           <label className="flex items-center justify-center gap-3">
             <input type="checkbox" />
-            aaa
+            <span className="break-all">aaa</span>
           </label>
           <button className="border bg-gray-200 cursor-pointer flex-none w-6 h-6 flex items-center justify-center">
             ×
