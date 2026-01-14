@@ -8,7 +8,13 @@ const Todo = (props) => {
       <li className="flex justify-between w-full items-start gap-3 ">
         <label className="flex gap-3 min-w-0 flex-1">
           <input type="checkbox" />
-          <span className="break-all">{props.title}</span>
+          <span
+            className={`break-all ${
+              props.isCompleted ? "line-through text-gray-400" : ""
+            }`}
+          >
+            {props.title}
+          </span>
         </label>
         <button className="border bg-gray-200 cursor-pointer flex-none w-6 h-6 flex items-center justify-center">
           ×
