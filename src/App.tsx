@@ -1,7 +1,6 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import { useForm } from "react-hook-form";
 
 const Todo = (props) => {
   return (
@@ -19,17 +18,20 @@ const Todo = (props) => {
   );
 };
 
-const todos = [
-  { title: "aaa", isCompleted: false },
-  { title: "bbb", isCompleted: false },
-  { title: "ccc", isCompleted: false },
-];
-
-const todoList = todos.map((todo) => {
-  return <Todo title={todo.title} isCompleted={todo.isCompleted} />;
-});
-
 function App() {
+  const [todos, setTodos] = useState([]);
+  const todoList = todos.map((todo, index) => {
+    return (
+      <Todo key={index} title={todo.title} isCompleted={todo.isCompleted} />
+    );
+  });
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    const title = data.title.trim();
+    if (!title) return;
+    setTodos((prev) => [...prev, { title, isCompleted: false }]);
+  };
+
   return (
     <div className="p-5 max-w-xl mx-auto">
       <div className="flex items-center justify-between gap-4 border-b-1 pb-3">
@@ -39,8 +41,11 @@ function App() {
         </button>
       </div>
       {todoList}
-      <form className="flex items-center gap-3 mt-5">
-        <input type="text" className="border flex-1" />
+      <form
+        className="flex items-center gap-3 mt-5"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <input type="text" className="border flex-1" {...register("title")} />
         <button className="border bg-gray-200 cursor-pointer pl-1 pr-1">
           Add
         </button>
