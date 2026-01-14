@@ -7,9 +7,12 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div className="bg-red-200 p-4">todoアプリ作成練習</div>
-    </>
+    <div className="flex items-center justify-center gap-4">
+      <h1 className="text-5xl font-bold">Todos</h1>
+      <button className="border bg-gray-200 cursor-pointer w-15 h-8">
+        Purge
+      </button>
+    </div>
   );
 }
 
