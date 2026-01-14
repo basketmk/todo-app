@@ -14,17 +14,17 @@ function App() {
           Purge
         </button>
       </div>
-      <ul className="flex flex-col items-center gap-2 m-4">
-        <li className="flex items-center gap-3">
-          <label className="flex items-center justify-center gap-3">
+      <ul className="flex items-center m-4">
+        <li className="flex items-centers justify-between w-full">
+          <label className="flex items-center gap-3">
             <input type="checkbox" />
             aaa
           </label>
           <button className="border bg-gray-200 cursor-pointer">×</button>
         </li>
       </ul>
-      <ul className="flex flex-col items-center gap-2 m-4">
-        <li className="flex items-center gap-3">
+      <ul className="flex items-center m-4">
+        <li className="flex items-center justify-between w-full">
           <label className="flex items-center justify-center gap-3">
             <input type="checkbox" />
             aaa
