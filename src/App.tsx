@@ -14,9 +14,9 @@ function App() {
           Purge
         </button>
       </div>
-      <ul className="flex items-center m-4">
-        <li className="flex items-centers justify-between w-full items-start gap-3">
-          <label className="flex items-center gap-3 flex-1 min-w-0">
+      <ul className="flex m-4">
+        <li className="flex justify-between w-full items-start gap-3 ">
+          <label className="flex gap-3 flex-1 min-w-0 flex-1">
             <input type="checkbox" />
             <div className="break-all">
               aaassssssssssssssssssswwwwwwwswwwwwwwwwwwwwwwwwwwwwwwwwwwwwwss
@@ -38,7 +38,7 @@ function App() {
           </button>
         </li>
       </ul>
-      <form className="flex items-center gap-3">
+      <form className="flex items-center gap-3 mt-5">
         <input type="text" className="border flex-1" />
         <button className="border bg-gray-200 cursor-pointer pl-1 pr-1">
           Add
