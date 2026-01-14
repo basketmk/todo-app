@@ -20,6 +20,7 @@ function App() {
             <input type="checkbox" />
             aaa
           </label>
+          <button className="border bg-gray-200 cursor-pointer">×</button>
         </li>
       </ul>
       <ul>
@@ -28,6 +29,7 @@ function App() {
             <input type="checkbox" />
             aaa
           </label>
+          <button className="border bg-gray-200 cursor-pointer">×</button>
         </li>
       </ul>
     </div>
