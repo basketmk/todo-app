@@ -20,7 +20,10 @@ const Todo = (props) => {
             {props.title}
           </span>
         </label>
-        <button className="border bg-gray-200 cursor-pointer flex-none w-6 h-6 flex items-center justify-center">
+        <button
+          onClick={props.onDelete}
+          className="border bg-gray-200 cursor-pointer flex-none w-6 h-6 flex items-center justify-center"
+        >
           ×
         </button>
       </li>
@@ -30,16 +33,6 @@ const Todo = (props) => {
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const todoList = todos.map((todo, index) => {
-    return (
-      <Todo
-        key={index}
-        title={todo.title}
-        isCompleted={todo.isCompleted}
-        onToggle={() => toggleTodo(index)}
-      />
-    );
-  });
   const toggleTodo = (index) => {
     setTodos((prev) =>
       prev.map((todo, i) =>
@@ -47,6 +40,21 @@ function App() {
       )
     );
   };
+  const deleteTodo = (index) => {
+    setTodos((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const todoList = todos.map((todo, index) => {
+    return (
+      <Todo
+        key={index}
+        title={todo.title}
+        isCompleted={todo.isCompleted}
+        onToggle={() => toggleTodo(index)}
+        onDelete={() => deleteTodo(index)}
+      />
+    );
+  });
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
