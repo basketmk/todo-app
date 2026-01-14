@@ -16,14 +16,18 @@ function App() {
       </div>
       <ul>
         <li>
-          <input type="checkbox" />
-          aaa
+          <label>
+            <input type="checkbox" />
+            aaa
+          </label>
         </li>
       </ul>
       <ul>
         <li>
-          <input type="checkbox" />
-          aaa
+          <label>
+            <input type="checkbox" />
+            aaa
+          </label>
         </li>
       </ul>
     </div>
