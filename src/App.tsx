@@ -7,7 +7,11 @@ const Todo = (props) => {
     <ul className="flex m-4">
       <li className="flex justify-between w-full items-start gap-3 ">
         <label className="flex gap-3 min-w-0 flex-1">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={props.isCompleted}
+            onChange={props.onToggle}
+          />
           <span
             className={`break-all ${
               props.isCompleted ? "line-through text-gray-400" : ""
@@ -28,9 +32,22 @@ function App() {
   const [todos, setTodos] = useState([]);
   const todoList = todos.map((todo, index) => {
     return (
-      <Todo key={index} title={todo.title} isCompleted={todo.isCompleted} />
+      <Todo
+        key={index}
+        title={todo.title}
+        isCompleted={todo.isCompleted}
+        onToggle={() => toggleTodo(index)}
+      />
     );
   });
+  const toggleTodo = (index) => {
+    setTodos((prev) =>
+      prev.map((todo, i) =>
+        i === index ? { ...todo, isCompleted: !todo.isCompleted } : todo
+      )
+    );
+  };
+
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     //ここのonSubmitはただの自分の関数（極論なんでもいい）
