@@ -32,6 +32,10 @@ function App() {
           <button className="border bg-gray-200 cursor-pointer">×</button>
         </li>
       </ul>
+      <form>
+        <input type="text" className="border" />
+        <button className="border bg-gray-200 cursor-pointer">Add</button>
+      </form>
     </div>
   );
 }
