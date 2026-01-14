@@ -7,10 +7,10 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="min-h-screen pt-5">
-      <div className="flex items-center justify-center gap-4">
+    <div className="p-5 max-w-xl mx-auto">
+      <div className="flex items-center justify-between gap-4 border-b-1 pb-3">
         <h1 className="text-5xl font-bold">Todos</h1>
-        <button className="border bg-gray-200 cursor-pointer w-15 h-8">
+        <button className="border bg-gray-200 cursor-pointer w-15 h-7">
           Purge
         </button>
       </div>
@@ -32,9 +32,11 @@ function App() {
           <button className="border bg-gray-200 cursor-pointer">×</button>
         </li>
       </ul>
-      <form className="flex items-center justify-center gap-3">
-        <input type="text" className="border" />
-        <button className="border bg-gray-200 cursor-pointer">Add</button>
+      <form className="flex items-center gap-3">
+        <input type="text" className="border flex-1" />
+        <button className="border bg-gray-200 cursor-pointer pl-1 pr-1">
+          Add
+        </button>
       </form>
     </div>
   );
