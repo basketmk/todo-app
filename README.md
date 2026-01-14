@@ -1,6 +1,6 @@
 # Todo アプリ (Vite + React + Tailwind CSS)
 
-このリポジトリでは、**Vite + React + Tailwind CSS** を使用し、Todoアプリの作成をしていきます。
+このリポジトリでは、**Vite + React + Tailwind CSS + React-hook-form** を使用し、Todoアプリの作成をしていきます。
 ドットインストールの教材に基づいて実装を進めていきます。
 
 ## 使用技術
@@ -9,6 +9,7 @@
 - React
 - TypeScript
 - Tailwind CSS
+- React-hook-form
 
 ## 起動方法
 
