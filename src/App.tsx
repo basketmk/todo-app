@@ -25,11 +25,13 @@ function App() {
       <Todo key={index} title={todo.title} isCompleted={todo.isCompleted} />
     );
   });
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
+    //ここのonSubmitはただの自分の関数（極論なんでもいい）
     const title = data.title.trim();
     if (!title) return;
     setTodos((prev) => [...prev, { title, isCompleted: false }]);
+    reset();
   };
 
   return (
