@@ -14,25 +14,25 @@ function App() {
           Purge
         </button>
       </div>
-      <ul>
-        <li>
-          <label>
+      <ul className="flex flex-col items-center gap-2 m-4">
+        <li className="flex items-center gap-3">
+          <label className="flex items-center justify-center gap-3">
             <input type="checkbox" />
             aaa
           </label>
           <button className="border bg-gray-200 cursor-pointer">×</button>
         </li>
       </ul>
-      <ul>
-        <li>
-          <label>
+      <ul className="flex flex-col items-center gap-2 m-4">
+        <li className="flex items-center gap-3">
+          <label className="flex items-center justify-center gap-3">
             <input type="checkbox" />
             aaa
           </label>
           <button className="border bg-gray-200 cursor-pointer">×</button>
         </li>
       </ul>
-      <form>
+      <form className="flex items-center justify-center gap-3">
         <input type="text" className="border" />
         <button className="border bg-gray-200 cursor-pointer">Add</button>
       </form>
