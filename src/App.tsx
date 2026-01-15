@@ -13,12 +13,21 @@ function App() {
     );
   };
   const deleteTodo = (index) => {
+    if (!confirm("Sure?")) {
+      return;
+    }
     setTodos((prev) => prev.filter((_, i) => i !== index));
   };
   const purgeCompletedTodos = () => {
+    if (!confirm("Sure?")) {
+      return;
+    }
     setTodos((prev) => prev.filter((todo) => !todo.isCompleted));
   };
   const clearAll = () => {
+    if (!confirm("Sure?")) {
+      return;
+    }
     setTodos([]);
   };
 
