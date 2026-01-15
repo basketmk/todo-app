@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 const Todo = (props) => {
   return (
     <ul className="flex m-4">
-      <li className="flex justify-between w-full items-start gap-3 ">
+      <li className="flex justify-between w-full items-center gap-3 ">
         <label className="flex gap-3 min-w-0 flex-1">
           <input
             type="checkbox"
@@ -22,7 +22,7 @@ const Todo = (props) => {
         </label>
         <button
           onClick={props.onDelete}
-          className="border bg-gray-200 cursor-pointer flex-none w-6 h-6 flex items-center justify-center"
+          className="border bg-gray-200 cursor-pointer w-6 h-6 flex items-center justify-center"
         >
           ×
         </button>
