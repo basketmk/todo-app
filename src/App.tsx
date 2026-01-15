@@ -70,14 +70,19 @@ function App() {
 
   return (
     <div className="p-5 max-w-xl mx-auto">
-      <div className="flex items-center justify-between gap-4 border-b-1 pb-3">
+      <div className="flex items-center justify-between gap-4 border-b pb-3">
         <h1 className="text-5xl font-bold">Todos</h1>
-        <button
-          className="border bg-gray-200 cursor-pointer w-15 h-7"
-          onClick={purgeTodos}
-        >
-          Purge
-        </button>
+        <div>
+          <button
+            className="border bg-gray-200 cursor-pointer w-25 h-7 text-sm mr-2"
+            onClick={purgeTodos}
+          >
+            完了済みを削除
+          </button>
+          <button className="border bg-gray-200 cursor-pointer w-25 h-7 text-sm">
+            全削除
+          </button>
+        </div>
       </div>
       {todoList}
       <form
