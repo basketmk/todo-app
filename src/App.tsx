@@ -43,11 +43,11 @@ function App() {
   const deleteTodo = (index) => {
     setTodos((prev) => prev.filter((_, i) => i !== index));
   };
-  const purgeCompletedTodo = () => {
+  const purgeCompletedTodos = () => {
     setTodos((prev) => prev.filter((todo) => !todo.isCompleted));
   };
   const clearAll = () => {
-    setTodos((prev) => []);
+    setTodos([]);
   };
 
   const todoList = todos.map((todo, index) => {
@@ -78,7 +78,7 @@ function App() {
         <div>
           <button
             className="border bg-gray-200 cursor-pointer w-25 h-7 text-sm mr-2 rounded"
-            onClick={purgeCompletedTodo}
+            onClick={purgeCompletedTodos}
           >
             完了済みを削除
           </button>
