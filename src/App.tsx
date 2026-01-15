@@ -14,7 +14,7 @@ const Todo = (props) => {
           />
           <span
             className={`break-all ${
-              props.isCompleted ? "line-through text-gray-400" : ""
+              props.isCompleted ? "line-through text-gray-600" : ""
             }`}
           >
             {props.title}
@@ -22,7 +22,7 @@ const Todo = (props) => {
         </label>
         <button
           onClick={props.onDelete}
-          className="border bg-gray-200 cursor-pointer w-6 h-6 flex items-center justify-center"
+          className="border bg-gray-200 cursor-pointer w-6 h-6 flex items-center justify-center rounded hover:bg-gray-300"
         >
           ×
         </button>
@@ -74,16 +74,16 @@ function App() {
   return (
     <div className="p-5 max-w-xl mx-auto">
       <div className="flex items-center justify-between gap-4 border-b pb-3">
-        <h1 className="text-5xl font-bold">Todos</h1>
+        <h1 className="text-5xl font-bold tracking-tight">Todos</h1>
         <div>
           <button
-            className="border bg-gray-200 cursor-pointer w-25 h-7 text-sm mr-2 rounded"
+            className="border-2 bg-gray-200 cursor-pointer h-9 px-3 text-sm mr-2 rounded hover:bg-gray-300"
             onClick={purgeCompletedTodos}
           >
             完了済みを削除
           </button>
           <button
-            className=" border-3 border-zinc-900 bg-red-500 cursor-pointer w-25 h-7 text-sm text-bold rounded text-white"
+            className=" border-2 border-zinc-900 bg-red-500 cursor-pointer h-9 px-3 text-sm text-bold rounded text-white hover:bg-red-600 font-mono"
             onClick={clearAll}
           >
             全削除
@@ -92,11 +92,15 @@ function App() {
       </div>
       {todoList}
       <form
-        className="flex items-center gap-3 mt-5"
+        className="flex items-center gap-2 mt-6"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <input type="text" className="border flex-1" {...register("title")} />
-        <button className="border bg-gray-200 cursor-pointer pl-1 pr-1">
+        <input
+          type="text"
+          className="border rounded flex-1 outline-none focus:border-2"
+          {...register("title")}
+        />
+        <button className="border bg-gray-200 rounded cursor-pointer pl-1 pr-1 hover:bg-gray-300">
           Add
         </button>
       </form>
