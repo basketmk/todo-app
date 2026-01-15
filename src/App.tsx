@@ -43,6 +43,9 @@ function App() {
   const deleteTodo = (index) => {
     setTodos((prev) => prev.filter((_, i) => i !== index));
   };
+  const purgeTodos = () => {
+    setTodos((prev) => prev.filter((todo) => !todo.isCompleted));
+  };
 
   const todoList = todos.map((todo, index) => {
     return (
@@ -69,7 +72,10 @@ function App() {
     <div className="p-5 max-w-xl mx-auto">
       <div className="flex items-center justify-between gap-4 border-b-1 pb-3">
         <h1 className="text-5xl font-bold">Todos</h1>
-        <button className="border bg-gray-200 cursor-pointer w-15 h-7">
+        <button
+          className="border bg-gray-200 cursor-pointer w-15 h-7"
+          onClick={purgeTodos}
+        >
           Purge
         </button>
       </div>
