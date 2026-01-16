@@ -47,14 +47,14 @@ function App() {
     setTodos([]);
   };
 
-  const todoList = todos.map((todo, index) => {
+  const todoList = todos.map((todo) => {
     return (
       <Todo
         key={todo.id}
         title={todo.title}
         isCompleted={todo.isCompleted}
-        onToggle={() => toggleTodo(index)}
-        onDelete={() => deleteTodo(index)}
+        onToggle={() => toggleTodo(todo.id)}
+        onDelete={() => deleteTodo(todo.id)}
       />
     );
   });
