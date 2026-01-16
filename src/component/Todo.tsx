@@ -1,4 +1,11 @@
-export const Todo = (props) => {
+type Props = {
+  title: string;
+  isCompleted: boolean;
+  onToggle: () => void;
+  onDelete: () => void;
+};
+
+export const Todo = (props: Props) => {
   return (
     <ul className="flex m-2">
       <li className="flex justify-between w-full items-center gap-3">

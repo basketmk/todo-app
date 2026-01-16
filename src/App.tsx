@@ -3,8 +3,14 @@ import "./App.css";
 import { useForm } from "react-hook-form";
 import { Todo } from "./component/Todo";
 
+type TodoItems = {
+  id: string;
+  title: string;
+  isCompleted: boolean;
+};
+
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<TodoItems[]>([]);
   const toggleTodo = (index) => {
     setTodos((prev) =>
       prev.map((todo, i) =>
