@@ -21,18 +21,18 @@ function App() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  const toggleTodo = (index) => {
+  const toggleTodo = (id: string) => {
     setTodos((prev) =>
-      prev.map((todo, i) =>
-        i === index ? { ...todo, isCompleted: !todo.isCompleted } : todo
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
       )
     );
   };
-  const deleteTodo = (index) => {
+  const deleteTodo = (id: string) => {
     if (!confirm("Sure?")) {
       return;
     }
-    setTodos((prev) => prev.filter((_, i) => i !== index));
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
   const purgeCompletedTodos = () => {
     if (!confirm("Sure?")) {
@@ -50,7 +50,7 @@ function App() {
   const todoList = todos.map((todo, index) => {
     return (
       <Todo
-        key={index}
+        key={todo.id}
         title={todo.title}
         isCompleted={todo.isCompleted}
         onToggle={() => toggleTodo(index)}
@@ -59,12 +59,22 @@ function App() {
     );
   });
 
-  const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
+  type FormValues = {
+    title: string;
+  };
+
+  const { register, handleSubmit, reset } = useForm<FormValues>();
+
+  const onSubmit = (data: FormValues) => {
     //ここのonSubmitはただの自分の関数（極論なんでもいい）
     const title = data.title.trim();
     if (!title) return;
-    setTodos((prev) => [...prev, { title, isCompleted: false }]);
+    const newTodo: TodoItem = {
+      id: crypto.randomUUID(),
+      title,
+      isCompleted: false,
+    };
+    setTodos((prev) => [...prev, newTodo]);
     reset();
   };
 
