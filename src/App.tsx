@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { useForm } from "react-hook-form";
 import { Todo } from "./component/Todo";
 
-type TodoItems = {
+type TodoItem = {
   id: string;
   title: string;
   isCompleted: boolean;
 };
 
+const STORAGE_KEY = "todos_v1";
+
 function App() {
-  const [todos, setTodos] = useState<TodoItems[]>([]);
+  const [todos, setTodos] = useState<TodoItem[]>(() => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (!stored) return [];
+    return JSON.parse(stored) as TodoItem[];
+  });
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
+
   const toggleTodo = (index) => {
     setTodos((prev) =>
       prev.map((todo, i) =>
